@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from fpdf import FPDF
+from fpdf import FPDF as fpdf
 import base64
 from io import BytesIO
 
