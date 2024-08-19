@@ -1,15 +1,16 @@
 import streamlit as st
 import pandas as pd
-from fpdf import FPDF
+from fpdf import FPDF as fpdf
 import base64
 from io import BytesIO
 
 # Set page config
 st.set_page_config(page_title="BMI Calculator", layout="centered")
 
-# Custom CSS to improve the app's appearance
+# Custom CSS to improve the app's appearance based on theme
 st.markdown("""
 <style>
+    /* Default light mode styles */
     .stApp {
         background-color: #f0f8ff;
     }
@@ -20,6 +21,22 @@ st.markdown("""
     }
     .stTextInput>div>div>input {
         background-color: #ffffff;
+        color: black;
+    }
+
+    /* Dark mode adjustments */
+    @media (prefers-color-scheme: dark) {
+        .stApp {
+            background-color: #1e1e1e;
+        }
+        .stButton>button {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .stTextInput>div>div>input {
+            background-color: #333333;
+            color: white;
+        }
     }
 </style>
 """, unsafe_allow_html=True)
