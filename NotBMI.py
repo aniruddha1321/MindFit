@@ -4,10 +4,9 @@ from fpdf import FPDF
 import base64
 from io import BytesIO
 
-# Set page config
 st.set_page_config(page_title="BMI Calculator", layout="centered")
 
-# Custom CSS to improve the app's appearance based on theme
+# theme css
 st.markdown("""
 <style>
     /* Default light mode styles */
@@ -41,10 +40,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# App title
 st.title("BMI Calculator")
 
-# Input fields
 name = st.text_input("Enter your name")
 age = st.number_input("Enter your age", min_value=1, max_value=120, step=1)
 gender = st.selectbox("Select your gender", ["Male", "Female", "Other"])
@@ -63,7 +60,7 @@ if st.button("Calculate BMI"):
     st.write(f"Height: {height:.1f} cm")
     st.write(f"BMI: {bmi:.2f}")
     
-    # BMI category
+    # BMI categories
     if bmi < 18.5:
         category = "Underweight"
     elif 18.5 <= bmi < 25:
@@ -75,7 +72,6 @@ if st.button("Calculate BMI"):
     
     st.write(f"Category: {category}")
     
-    # Create a PDF receipt
     def create_download_link(val, filename):
         b64 = base64.b64encode(val)
         return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download PDF</a>'
@@ -99,7 +95,6 @@ if st.button("Calculate BMI"):
     html = create_download_link(pdf, "BMI_receipt")
     st.markdown(html, unsafe_allow_html=True)
 
-# Add some information about BMI
 st.sidebar.header("About BMI")
 st.sidebar.write("""
 Body Mass Index (BMI) is a simple way to measure body fat based on height and weight that applies to adult men and women.
