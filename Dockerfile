@@ -11,4 +11,4 @@ WORKDIR /app
 RUN pip install -r requirements.txt
 
 COPY . /app
-CMD ["streamlit", "run", "your_app.py"]
+CMD ["streamlit", "run", "FinalProject.py"]
