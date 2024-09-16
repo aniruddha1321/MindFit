@@ -137,7 +137,7 @@ def main():
             if not st.session_state.recommendation_generated:
                 diet_plan = generate_diet_plan(bmi, diet_preference, name, age, gender, additional_input)
                 st.session_state.diet_plan = diet_plan
-                st.session_state.recommendation_generated = True  # Set flag to prevent regeneration
+                st.session_state.recommendation_generated = True
                 st.write(diet_plan)
         else:
             st.write("Please fill in all the details.")
