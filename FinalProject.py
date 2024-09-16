@@ -26,7 +26,7 @@ def generate_diet_plan(bmi, diet_preference, name, age, gender, additional_input
         f"Diet Preference: {diet_preference}\n"
         f"Location: India\n"  # Specify the location
     )
-    
+
     if additional_input:
         prompt += f"Additional Input: {additional_input}\n"
 
@@ -38,7 +38,7 @@ def generate_diet_plan(bmi, diet_preference, name, age, gender, additional_input
 
     # Generate the response using Gemini AI
     response = model.generate_content(prompt)
-    
+
     return response.text
 
 def get_nutritional_info(food_item):
@@ -52,9 +52,9 @@ def get_nutritional_info(food_item):
         "query": food_item,
         "timezone": "US/Eastern"
     }
-    
+
     response = requests.post(url, json=body, headers=headers)
-    
+
     if response.status_code == 200:
         data = response.json()
         if data['foods']:
@@ -122,7 +122,7 @@ def main():
     weight = st.number_input("Enter your weight (kg)", min_value=1.0, step=0.1)
     height = st.number_input("Enter your height (cm)", min_value=50.0, step=0.1)
     diet_preference = st.selectbox("Do you prefer a vegetarian or non-vegetarian diet?", ["Veg", "Non-Veg"])
-    
+
     # Additional Input Box for Custom Preferences
     additional_input = st.text_area("Enter any additional preferences or restrictions (e.g., allergies, dislikes):")
 
@@ -132,12 +132,12 @@ def main():
             bmi = calculate_bmi(weight, height)
             st.session_state.bmi = bmi
             st.write(f"Hello {name}, your BMI is: {bmi}")
-            
+
             # Generate a personalized diet plan only if it hasn't been generated already
             if not st.session_state.recommendation_generated:
                 diet_plan = generate_diet_plan(bmi, diet_preference, name, age, gender, additional_input)
                 st.session_state.diet_plan = diet_plan
-                st.session_state.recommendation_generated = True
+                st.session_state.recommendation_generated = True  # Set flag to prevent regeneration
                 st.write(diet_plan)
         else:
             st.write("Please fill in all the details.")
