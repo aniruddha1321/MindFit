@@ -82,8 +82,8 @@ def main():
         st.session_state.recommendation_generated = False
 
     # Welcome Note
-    st.title("BMI & Diet Recommender")
-    st.write("Welcome to the BMI & Diet Recommender App! This app calculates your BMI and provides a personalized diet plan based on your details. You can also check the nutritional content of various food items.")
+    st.title("NutriFit")
+    st.write("Welcome to the Fitness & Diet Recommender App! This app calculates your BMI and provides a personalized diet and workout plan based on your details. You can also check the nutritional content of various food items.")
 
     # Sidebar Calorie Counter
     st.sidebar.header("Nutritional Information")
