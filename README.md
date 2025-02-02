@@ -1,4 +1,4 @@
-# MindFit: AI-Powered Health & Wellness Platform
+# MindFit: Health & Wellness Platform
 
 ## Overview
 MindFit is a comprehensive AI-driven platform designed to help individuals achieve their health and wellness goals through personalized nutrition planning, customized workout recommendations, and an intelligent health chatbot. By leveraging advanced AI models, including open LLMs, the platform ensures tailored solutions that prioritize accessibility, affordability, and sustainability.
