@@ -18,9 +18,10 @@ MindFit is a comprehensive AI-driven platform designed to help individuals achie
 - **HTML & CSS** – Custom styling and UI enhancements
 
 ![Screenshot 2025-01-11 220046](https://github.com/user-attachments/assets/4088df35-d621-4504-a9e4-2392de038699)
-![Picture1](https://github.com/user-attachments/assets/410a8a07-8cb5-40b1-8745-67ea642dbf08)
 ![Picture2](https://github.com/user-attachments/assets/e675b0d2-40bd-41b5-8e81-223abe6bb673)
 ![Picture3](https://github.com/user-attachments/assets/790d5c7c-5356-4fab-a875-0f211f479ec8)
+![image](https://github.com/user-attachments/assets/d06cc994-b110-4a9f-9719-7f18f0ff92cd)
+
 
 ## Future Enhancements
 - Integration of more dietary preferences and cultural meal plans
